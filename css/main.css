@@ -1474,3 +1474,107 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+
+/* ==== Ajuste del hero para móviles ==== */
+#hero img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Muestra la imagen completa */
+  position: static; /* Saca la imagen del fondo absoluto */
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #000; /* Fondo negro para que se vea bien si hay espacio vacío */
+  padding-top: 100px; /* Ajusta si el header tapa algo */
+  padding-bottom: 40px;
+}
+
+/* === HERO (Carrusel con imágenes y video) === */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Carrusel interior ocupa todo el alto */
+#hero .carousel-inner {
+  height: 100%;
+}
+
+/* Imágenes y videos dentro del hero */
+#hero .carousel-item img,
+#hero .carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ajusta al contenedor sin deformar */
+  filter: brightness(70%); /* oscurece un poco para resaltar el texto */
+}
+
+/* Controles (flechas) */
+#hero .carousel-control-prev-icon,
+#hero .carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* === Ajustes solo para pantallas pequeñas === */
+@media (max-width: 768px) {
+
+  /* Hero se adapta al contenido (no fuerza 100vh) */
+  #hero {
+    height: auto;
+  }
+
+  /* Imágenes y videos se muestran completos */
+  #hero .carousel-item img,
+  #hero .carousel-item video {
+    object-fit: contain;
+    height: auto;
+    filter: brightness(100%);
+  }
+
+  /* Quita exceso de sombra o recorte */
+  #hero .carousel-inner {
+    height: auto;
+  }
+}
+
+
+#whatsapp-contact {
+  background-color: #000; /* fondo oscuro */
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#whatsapp-contact h2 {
+  color: #fff;
+  font-weight: 600;
+}
+
+#whatsapp-contact p {
+  color: #aaa;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+}
+
+#whatsapp-contact .btn-outline-success {
+  border: 2px solid #00ff80;
+  color: #00ff80;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+#whatsapp-contact .btn-outline-success:hover {
+  background-color: #00ff80;
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.5);
+}
